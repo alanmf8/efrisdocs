@@ -24,6 +24,13 @@ under the License.
 // GENERAL STUFF
 ////////////////////////////////////////////////////////////////////////////////
 
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono'); html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+
 html, body {
   color: $main-text;
   padding: 0;
@@ -352,8 +359,8 @@ html, body {
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    // border-top: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
     background-color: #fdfdfd;
   }
 
@@ -416,7 +423,7 @@ html, body {
     }
 
     td {
-      padding: 10px;
+      padding: 6.5px;
     }
 
     tr:last-child {
@@ -429,6 +436,37 @@ html, body {
 
     tr:nth-child(even)>td {
       background-color: lighten($main-bg,2.4%);
+    }
+
+    // CUSTOMISATION
+    thead tr th:empty {
+      display: none;
+    }
+
+    th, td {
+      padding-left: 0px;
+      padding-right: 0px;
+
+      & div {
+        padding-left: 13px;
+      }
+    }
+
+    tbody, thead {
+      display: table;
+      width: 100%;
+
+      tr {
+        border-bottom: .5px solid #ccc;
+      }
+
+      td {
+        background-color: transparent !important;
+      }
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
     }
   }
 
@@ -451,8 +489,8 @@ html, body {
 
   code {
     background-color: rgba(0,0,0,0.05);
-    padding: 3px;
-    border-radius: 3px;
+    padding: 1px 3px;
+    border-radius: 2px;
     @extend %break-words;
     @extend %code-font;
   }
